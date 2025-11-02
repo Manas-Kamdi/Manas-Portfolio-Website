@@ -410,12 +410,37 @@ nav .right ul li a:hover {
     background: var(--accent);
     color: #fff;
     border: none;
-    padding: 10px 14px;
-    border-radius: 6px;
+    padding: 12px 18px;
+    min-width: 140px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.25s, box-shadow 0.25s;
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.18s ease,
+                background-color 0.18s ease, opacity 0.18s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    font-weight: 600;
 }
-.btn:hover { background: #a01aa0; box-shadow: 0 0 10px #a01aa0 }
+.btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.26), 0 0 18px rgba(195,32,195,0.08);
+    opacity: 0.98;
+}
+
+/* Accessible focus state */
+.btn:focus,
+.btn:focus-visible {
+    outline: 3px solid rgba(195,32,195,0.16);
+    outline-offset: 3px;
+}
+
+/* Active (pressed) */
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
 
 /* ---------- Skills grid ---------- */
 .SixthSection {
@@ -577,14 +602,42 @@ nav .right ul li a:hover {
 
 .project-card a {
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    margin-top: 10px;
-    transition: transform 0.3s ease;
+    display: block; /* make block so margin:auto centers reliably */
+    width: max-content; /* shrink to content width */
+    text-align: center;
+    margin: 16px auto 0; /* center horizontally */
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, opacity 0.25s;
 }
 
 .project-card a:hover {
-    transform: translateX(5px);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.28), 0 0 24px rgba(195,32,195,0.12);
+    opacity: 0.98;
+}
+
+/* Ensure buttons inside generic cards (like certificates) are centered */
+.card .btn,
+.card .btn-primary,
+.card .btn:link,
+.card .btn-primary:link {
+    display: block; /* center reliably inside card-body */
+    width: max-content;
+    margin: 16px auto 0;
+    text-align: center;
+}
+
+/* Slightly larger touch target and visible focus state for accessibility */
+.project-card a:focus,
+.card .btn:focus,
+.card .btn-primary:focus {
+    outline: 3px solid rgba(195,32,195,0.14);
+    outline-offset: 3px;
 }
 
 /* Contact Section */
@@ -665,7 +718,7 @@ nav .right ul li a:hover {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* single column now that contact form is removed */
     gap: 40px;
     background: rgba(15,15,40,0.3);
     border-radius: 20px;
@@ -1030,12 +1083,13 @@ nav .right ul li a:hover {
     background: var(--accent);
     color: #fff;
     border: none;
-    padding: 14px 32px;
-    border-radius: 8px;
+    padding: 12px 26px;
+    min-width: 160px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s ease;
     position: relative;
     overflow: hidden;
     display: inline-flex;
@@ -1043,6 +1097,7 @@ nav .right ul li a:hover {
     justify-content: center;
     gap: 8px;
     letter-spacing: 0.5px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.14);
 }
 
 .btn-primary::before {
@@ -1059,8 +1114,8 @@ nav .right ul li a:hover {
 
 .btn-primary:hover {
     background: var(--accent-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(195,32,195,0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.32), 0 0 26px rgba(195,32,195,0.12);
 }
 
 .btn-primary:hover::before {
@@ -1069,73 +1124,26 @@ nav .right ul li a:hover {
 
 .btn-primary:active {
     transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(195,32,195,0.3);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
-/* Add loading state for button */
-.btn-primary.loading {
-    background: var(--accent-dark);
-    pointer-events: none;
-    position: relative;
+.btn-primary:focus,
+.btn-primary:focus-visible {
+    outline: 3px solid rgba(195,32,195,0.14);
+    outline-offset: 3px;
 }
 
-.btn-primary.loading::after {
-    content: '';
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 0.8s linear infinite;
-    position: absolute;
-    right: 10px;
+/* Center primary buttons across the site except the resume button */
+.btn,
+.btn-primary {
+    display: inline-block;
+    margin: 18px auto 0;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Loading Spinner */
-.loading-spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 0.8s linear infinite;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Notification Styles */
-.notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 15px 25px;
-    border-radius: 8px;
-    color: white;
-    font-weight: 500;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
-}
-
-.notification.success {
-    background: #28a745;
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
-}
-
-.notification.error {
-    background: #dc3545;
-    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
-}
-
-.notification.show {
-    transform: translateY(0);
-    opacity: 1;
+/* Keep resume button positioned as designed (don't center) */
+.btn-resume {
+    display: inline-flex;
+    margin: 30px 0 0 0;
 }
 
 @media (max-width: 768px) {

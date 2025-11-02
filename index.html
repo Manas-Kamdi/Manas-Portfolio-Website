@@ -24,7 +24,7 @@
             <div class="scroll-progress"></div>
             <div class="right">
                 <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-                    <span class="sr-only">Menu</span>
+                    <!-- <span class="sr-only">Menu</span> -->
                     <span class="hamburger"></span>
                 </button>
                 <ul id="primary-navigation">
@@ -54,7 +54,7 @@
                 design, and analytical thinking.
             </p>
             <div class="resume-btn-wrapper">
-                <a href="assets/Manas_Resume.pdf" download class="btn-resume">
+                <a href="assets/ManasResume.pdf" download class="btn-resume">
                     <span class="btn-text">Download Resume</span>
                     <span class="btn-icon">📄</span>
                     <span class="btn-shine"></span>
@@ -116,29 +116,11 @@
                 </div>
                 <div class="card-body">
                     <div class="card-title">Application Development Using Java</div>
-                    <div class="card-text">In That Course i learned about how to build web application using Bootstrap
-                        and
-                        My-Sql</div>
+                    <div class="card-text">In that course I learned about building web applications using Bootstrap and MySQL.</div>
                     <button class="btn btn-primary" onclick="imageopen()">View Certificate</button>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="heading" id="experiance">EXPERIANCE</div>
-    <section class="cards-grid">
-        <div class="card-wrapper">
-            <div class="card">
-                <div class="card-header">
-                    IT-Networkz Infosystems Pvt.Ltd Nagpur
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Web Developer Intern</div>
-                    <div class="card-text">Worked on developing responsive web applications using HTML, CSS, JavaScript
-                        and Mysql.</div>
-                    <div class="card-text">From 27th May 2024 to 13th July 2024</div>
-                </div>
-            </div>
     </section>
 
     <div class="heading" id="skills">SKILLS</div>
@@ -162,14 +144,15 @@
 
     <div class="heading" id="projects">PROJECTS</div>
     <section class="projects-grid">
-        <div class="project-card">
+        <!-- <div class="project-card">
             <h4>Project Title 1</h4>
             <p class="card-text">Short description of the project, technologies used and main features.</p>
             <p><a href="#" class="btn">View</a></p>
-        </div>
+        </div> -->
         <div class="project-card">
             <h4>Grocery Shop E-Commerce Store</h4>
-            <p class="card-text">GroceryShop is an Ecommerce Store in which a user can order Groceries from remote place</p>
+            <p class="card-text">GroceryShop is an Ecommerce Store in which a user can order Groceries from remote place
+            </p>
             <p><a href="https://groceryshop-74h8.onrender.com/" class="btn">Visit GroceryShop</a></p>
         </div>
     </section>
@@ -178,40 +161,14 @@
     <section class="contact-section">
         <div class="contact-intro-wrapper">
             <p class="contact-intro">
-                I'm always interested in hearing about <span class="highlight">new opportunities</span>, 
-                <span class="highlight">interesting projects</span>, or just want to say 
+                I'm always interested in hearing about <span class="highlight">new opportunities</span>,
+                <span class="highlight">interesting projects</span>, or just want to say
                 <span class="highlight">hello</span>. Feel free to reach out!
             </p>
             <div class="intro-line"></div>
         </div>
 
         <div class="contact-container">
-            <div class="contact-form">
-                <h3>Send me a message</h3>
-                <form id="contactForm" onsubmit="return sendEmail(event)">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me more about your project or inquiry..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                        <span class="btn-text">Send Message</span>
-                        <span class="loading-spinner" style="display: none;"></span>
-                    </button>
-                </form>
-            </div>
-
             <div class="contact-info">
                 <h3>Direct Contact</h3>
                 <div class="info-item">
@@ -246,27 +203,30 @@
 
                 <div class="social-links">
                     <h3>Connect With Me</h3>
-                    <a href="https://github.com/Manas-Kamdi" target="_blank" class="social-link" aria-label="Visit my GitHub profile">
+                    <a href="https://github.com/Manas-Kamdi" target="_blank" class="social-link"
+                        aria-label="Visit my GitHub profile">
                         <img src="assets/skills/github.png" alt="GitHub">
                         <div>
                             <h4>GitHub</h4>
                             <p>Visit my GitHub profile</p>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/manas-kamdi13" target="_blank" class="social-link" aria-label="Connect with me on LinkedIn">
+                    <a href="https://www.linkedin.com/in/manas-kamdi13" target="_blank" class="social-link"
+                        aria-label="Connect with me on LinkedIn">
                         <img src="assets/skills/linkdin.png" alt="LinkedIn">
                         <div>
                             <h4>LinkdIn</h4>
                             <p>Visit My linkdin profile and connect with Me</p>
                         </div>
                     </a>
-                    <a href="https://twitter.com/manas_kamdi" target="_blank" class="social-link" aria-label="Follow me on X (Twitter)">
+                    <!-- <a href="https://twitter.com/manas_kamdi" target="_blank" class="social-link"
+                        aria-label="Follow me on X (Twitter)">
                         <img src="assets/skills/x.jpg" alt="X (Twitter)">
                         <div>
                             <h4>X (Twitter)</h4>
                             <p>Stay updated with my latest posts</p>
                         </div>
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
@@ -277,12 +237,8 @@
     </footer>
     <!-- Typed.js Effect -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-        // Initialize EmailJS - replace this with your actual public key from EmailJS
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY");
-        })();
         var typed = new Typed("#element", {
             strings: ["Web Developer", "Data Science Learner", "Creative Coder"],
             loop: true,
@@ -294,82 +250,21 @@
         function imageopen() {
             window.open("assets/IntershipCertificate.jpeg", "_blank");
         }
-        
+
         // Mobile nav toggle
-        (function (){
-            const navToggle = document.querySelector('.nav-toggle');
-            const primaryNav = document.getElementById('primary-navigation');
-            if(navToggle && primaryNav){
-                navToggle.addEventListener('click', function(){
-                    const expanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', String(!expanded));
-                    primaryNav.classList.toggle('open');
-                });
-            }
-        })();
-
-        // set current year in footer
-        (function(){
-            const y = document.getElementById('year');
-            if(y) y.textContent = new Date().getFullYear();
-        })();
-
-        // Contact form submission
-        function sendEmail(e) {
-            e.preventDefault();
-
-            // Get the submit button and form
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const spinner = submitBtn.querySelector('.loading-spinner');
-            const form = document.getElementById('contactForm');
-
-            // Show loading state
-            btnText.style.opacity = '0';
-            spinner.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            // Prepare the template parameters
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                to_name: 'Manas', // Your name
-            };
-
-            // Send the email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                .then(function(response) {
-                    // Success
-                    showNotification('Message sent successfully! I will get back to you soon.', 'success');
-                    form.reset();
-                }, function(error) {
-                    // Error
-                    console.error('Error:', error);
-                    showNotification('Failed to send message. Please try again.', 'error');
-                })
-                .finally(function() {
-                    // Reset button state
-                    btnText.style.opacity = '1';
-                    spinner.style.display = 'none';
-                    submitBtn.disabled = false;
-                });
-
-            return false;
-        }
+        // No contact form JS (form removed) - keeping only non-contact scripts below
 
         // Notification function
         function showNotification(message, type) {
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
             notification.textContent = message;
-            
+
             document.body.appendChild(notification);
-            
+
             // Trigger animation
             setTimeout(() => notification.classList.add('show'), 100);
-            
+
             // Remove notification after 3 seconds
             setTimeout(() => {
                 notification.classList.remove('show');
@@ -383,14 +278,14 @@
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
+
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
 
         // Scroll Progress Bar
-        (function() {
+        (function () {
             const progressBar = document.querySelector('.scroll-progress');
             let lastScrollPercent = 0;
             let animationFrame;
@@ -427,4 +322,5 @@
         })();
     </script>
 </body>
+
 </html>
