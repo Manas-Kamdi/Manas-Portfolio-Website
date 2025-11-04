@@ -24,8 +24,8 @@
             <div class="scroll-progress"></div>
             <div class="right">
                 <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-                    <!-- <span class="sr-only">Menu</span> -->
-                    <span class="hamburger"></span>
+                    <span class="sr-only"></span>
+                    <span class="hamburger">menu</span>
                 </button>
                 <ul id="primary-navigation">
                     <li><a href="#home">Home</a></li>
@@ -332,6 +332,38 @@
             // Initial call
             updateProgressBar();
         })();
+
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const primaryNav = document.querySelector('#primary-navigation');
+        
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            primaryNav.classList.toggle('open');
+            
+            // Update the hamburger text based on state
+            const hamburgerText = navToggle.querySelector('.hamburger');
+            hamburgerText.textContent = isExpanded ? 'menu' : 'close';
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !primaryNav.contains(e.target)) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                primaryNav.classList.remove('open');
+                navToggle.querySelector('.hamburger').textContent = 'menu';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        primaryNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                primaryNav.classList.remove('open');
+                navToggle.querySelector('.hamburger').textContent = 'menu';
+            });
+        });
     </script>
 </body>
 
